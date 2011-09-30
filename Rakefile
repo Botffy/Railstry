@@ -5,3 +5,9 @@
 require File.expand_path('../config/application', __FILE__)
 
 Firstapp::Application.load_tasks
+
+
+desc "Running all tests with rspec"
+task :test do
+	sh "bundle exec rspec spec"
+end
