@@ -12,6 +12,12 @@ group :production do
   gem "pg"
 end
 
+group :development do
+  gem 'rspec-rails', '2.6.1'
+end
+
+
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -32,6 +38,9 @@ gem 'jquery-rails'
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
 group :test do
+	gem 'rspec-rails', '2.6.1'
+	gem 'webrat', '0.7.1'
   # Pretty printed test output
-  gem 'turn', :require => false
+  # gem 'turn', :require => false
 end
+
