@@ -4,7 +4,7 @@ module ApplicationHelper
 def title
 	base_title="Railstry"
 	if @title.nil?
-		base title
+		base_title
 	else
 		"#{base_title}::#{@title}"
 	end
