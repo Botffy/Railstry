@@ -4,7 +4,7 @@ describe PagesController do
 	render_views
 
 	before(:each) do
-		@base_title="Railstry | "
+		@base_title="Railstry::"
 	end
 
 	describe "GET 'home'" do
