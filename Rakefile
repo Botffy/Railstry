@@ -9,5 +9,5 @@ Firstapp::Application.load_tasks
 
 desc "Running all tests with rspec"
 task :testit do
-	sh "bundle exec rspec spec"
+	sh "bundle exec rspec --drb spec"
 end
