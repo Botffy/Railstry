@@ -8,6 +8,6 @@ Firstapp::Application.load_tasks
 
 
 desc "Running all tests with rspec"
-task :test do
+task :testit do
 	sh "bundle exec rspec spec"
 end
