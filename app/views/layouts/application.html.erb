@@ -3,7 +3,12 @@
 <head>
 	<title><%= title %></title>
 	<%= csrf_meta_tags %>
+
 	<%= stylesheet_link_tag 'mainpage', :media => 'screen' %>
+	<%= javascript_include_tag :application %>
+
+	<%= yield(:css) if content_for?(:css)%>
+	<%= yield(:js) if content_for?(:js)%>
 </head>
 <body>
 
@@ -13,7 +18,7 @@
 
 <%= render 'layouts/navlinks' %>
 <section id='content'>
-	<%= yield %>
+	<%= content_for?(:content) ? yield(:content) : yield %>
 </section>
 
 </div>
