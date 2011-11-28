@@ -15,5 +15,5 @@ end
 
 desc "Running all tests with rspec"
 task :testit do
-	sh "bundle exec rspec --drb spec"
+	sh "bundle exec rspec --format specdoc"
 end

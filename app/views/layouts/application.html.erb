@@ -14,12 +14,16 @@
 
 
 <div id='container'>
+
 <%= render 'layouts/header' %>
 
 <%= render 'layouts/navlinks' %>
-<section id='content'>
+
+<section id='content' class='round'>
 	<%= content_for?(:content) ? yield(:content) : yield %>
 </section>
+
+<%= render 'layouts/footer' %>
 
 </div>
 
