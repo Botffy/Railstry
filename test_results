@@ -42,6 +42,11 @@ UsersController
   GET 'new'
     should be successful
     should have the right title
+  POST 'create'
+    failure
+      should not create a user
+      should have the right title
+      should render the new page
   GET 'show'
     should be successful
     should find the correct user
@@ -57,5 +62,5 @@ LayoutLinks
   should have the Signup page at '/signup'
   should have the right links leading to the right pages
 
-Finished in 6.03 seconds
-40 examples, 0 failures
+Finished in 5.27 seconds
+43 examples, 0 failures

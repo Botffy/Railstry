@@ -144,3 +144,38 @@ a.fakebutton:hover, nav ul li a:hover {
   border-radius:         10px;
 }
 
+
+/* forms */
+div.field, div.actions {
+	margin-bottom: 10px;
+}
+
+div.field_with_errors {
+	display: inline;
+}
+div.field_with_errors label {
+	color: red;
+}
+div.field_with_errors input {
+	border: 1px solid red;
+}
+
+#error_explanation {
+	margin-bottom: 2em;
+	margin-top: 2em;
+	display: block;
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+	border: 2px solid red;
+	padding: 12px;
+	background-color: #DEFFFF;
+}
+#error_explanation h2 {
+	background-color: red;
+	color: white;
+	font-size: 100%;
+	padding: 0;
+	margin: -12px;
+	margin-bottom: 1em;
+}

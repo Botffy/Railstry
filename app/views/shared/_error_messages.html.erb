@@ -1,0 +1,11 @@
+<% if @user.errors.any? %>
+<div id='error_explanation'>
+	<h2>Error!</h2>
+	<p>Your attempt to register on the site ended in a miserable failure due to the following <%= pluralize(@user.errors.count, "error") %>:</p>
+	<ul>
+	<% @user.errors.full_messages.each do |msg| %>
+		<li><%= msg %>
+	<% end %>
+	</ul>
+</div>
+<% end %>
