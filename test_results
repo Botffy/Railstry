@@ -1,4 +1,29 @@
 
+User
+  should create a new instance given valid attributes
+  should require a name
+  should reject overlong names
+  should require an email address
+  should accept valid email addresses
+  should reject invalid email addresses
+  should reject duplicate email addresses
+  should reject duplicate email adresses case-insensitively
+  password validations
+    should require a password
+    should require a matching password confirmation
+    should reject short passwords
+    should reject overlong passwords
+  password encryption
+    should have an encrypted password attribute
+    should set the encrypted password
+    has_password? method
+      should be true if the passwords match
+      should be false if the passwords don't match
+    authenticate method
+      should return nil when there's an email/password mismatch
+      should return nil for unknown email addresses
+      should return the user object if there's a match
+
 PagesController
   GET 'home'
     should be successful
@@ -17,6 +42,12 @@ UsersController
   GET 'new'
     should be successful
     should have the right title
+  GET 'show'
+    should be successful
+    should find the correct user
+    should have the right title
+    should include the user's name in a h1
+    should have a profile image around the name
 
 LayoutLinks
   should have the Home page at root
@@ -26,5 +57,5 @@ LayoutLinks
   should have the Signup page at '/signup'
   should have the right links leading to the right pages
 
-Finished in 2.12 seconds
-16 examples, 0 failures
+Finished in 6.03 seconds
+40 examples, 0 failures

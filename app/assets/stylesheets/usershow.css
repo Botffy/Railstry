@@ -1,0 +1,32 @@
+/* User show page */
+
+table.userprofile {
+	width: 100%;
+	margin-bottom: 0;
+}
+
+td.main {
+	width: 70%;
+	padding: 1em;
+}
+
+td.sidebar {
+	width: 30%;
+	padding: 1em;
+	vertical-align: top;
+	background: #00c7e7;
+}
+
+#content td.sidebar a, #content td.sidebar a:visited {
+	color: black;
+	text-decoration: underline;
+}
+
+.userprofile img.gravatar {
+	border: 1px solid #999;
+	vertical-align: middle;
+}
+.userprofile .main {
+	font-size: 130%;
+}
+

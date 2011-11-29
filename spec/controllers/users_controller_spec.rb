@@ -21,15 +21,25 @@ describe UsersController do
 		before(:each) do
 			@user = Factory(:user)
 		end
-
 		it "should be successful" do
 			get :show, :id => @user
 			response.should be_success
 		end
-
 		it "should find the correct user" do
 			get :show, :id => @user
 			assigns(:user).should == @user
+		end
+		it "should have the right title" do
+			get :show, :id => @user
+			response.should have_selector("title",:content=>@user.name)
+		end
+		it "should include the user's name in a h1" do
+      		get :show, :id => @user
+      		response.should have_selector("h1",:content=>@user.name)
+    		end
+		it "should have a profile image around the name" do
+			get :show, :id => @user
+			response.should have_selector("h1>img", :class=>"gravatar")
 		end
 	end
 
