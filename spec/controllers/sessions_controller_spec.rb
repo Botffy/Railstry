@@ -16,6 +16,27 @@ describe SessionsController do
   end
 
 	describe "POST 'create'" do
+		describe "successful signin" do
+			before(:each) do
+				@user=Factory(:user)
+				@attr={:email=>@user.email, :password=>@user.password}
+			end
+
+			it "should sign in the user" do
+				post :create, :session=>@attr
+				controller.current_user.should==@user
+				controller.should be_signed_in
+			end
+			it "should redirect to the user's profile" do
+				post :create, :session=>@attr
+				response.should redirect_to(user_path(@user))
+			end
+			it "should also show a welcome back message" do
+				post :create, :session=>@attr
+				flash[:success].should =~ /welcome/i
+			end
+			
+		end
 
 		describe "invalid signin" do
 			before(:each) do

@@ -67,6 +67,10 @@ SessionsController
     should be successful
     should have the right title
   POST 'create'
+    successful signin
+      should sign in the user
+      should redirect to the user's profile
+      should also show a welcome back message
     invalid signin
       should redirect back to the login page
       should have the correct title
@@ -87,5 +91,5 @@ LayoutLinks
   should have the Signup page at '/signup'
   should have the right links leading to the right pages
 
-Finished in 7.66 seconds
-57 examples, 0 failures
+Finished in 6.31 seconds
+60 examples, 0 failures
