@@ -43,7 +43,7 @@ header {
 	background-color: #fff;
 	padding: 1em;
 	margin-bottom: 1em;
-	border: 2px solid #0d9dfe;
+	border: 1px solid #0d9dfe;
 }
 
 nav.upper_navlist {
@@ -81,7 +81,7 @@ nav ul li a {
 	/*width: 100%;*/
 	background-color: #fff;
 	padding: 10px;
-	border: 2px solid #0d9dfe;
+	border: 1px solid #0d9dfe;
 }
 
 #content h1 {
