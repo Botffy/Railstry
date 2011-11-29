@@ -30,6 +30,7 @@ gem 'jquery-rails'
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
 group :test do
+	gem 'factory_girl_rails', '1.0'
 	gem 'rspec-rails', '2.6.1'
 	gem 'webrat', '0.7.1'
 	gem 'spork', '0.9.0.rc5'
