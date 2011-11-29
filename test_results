@@ -55,6 +55,7 @@ UsersController
       should create a user
       should redirect to the user's profile on success
       should have a welcome message flash
+      should sign the user in
   GET 'show'
     should be successful
     should find the correct user
@@ -66,6 +67,8 @@ SessionsController
   GET 'new'
     should be successful
     should have the right title
+  DELETE 'destroy'
+    should sign the user out
   POST 'create'
     successful signin
       should sign in the user
@@ -91,5 +94,5 @@ LayoutLinks
   should have the Signup page at '/signup'
   should have the right links leading to the right pages
 
-Finished in 6.31 seconds
-60 examples, 0 failures
+Finished in 6.39 seconds
+62 examples, 0 failures
