@@ -29,7 +29,7 @@ class User < ActiveRecord::Base
 
 	#true if the hash of the submitted password equals the hash of the stored password.
 	def has_password?(submitted_password)
-		self.encrypt_password==encrypt(submitted_password)
+		encrypted_password==encrypt(submitted_password)
 	end
 
 
@@ -46,7 +46,7 @@ class User < ActiveRecord::Base
 
 	def encrypt_password
 		self.salt = make_salt unless has_password?(password)
-		encrypted_password = encrypt(self.password)
+		self.encrypted_password = encrypt(self.password)
 	end
 	def encrypt(string)
 		secure_hash("#{self.salt}--#{string}")
