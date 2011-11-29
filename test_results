@@ -85,6 +85,11 @@ Users
       should not make a new user
     success
       should make a new user
+  sign in/sign out
+    failure
+      should not sign a user in
+    successive successes
+      should sign a user in and out
 
 LayoutLinks
   should have the Home page at root
@@ -99,5 +104,5 @@ LayoutLinks
     should have a signout link
     should have a profile link
 
-Finished in 7.86 seconds
-65 examples, 0 failures
+Finished in 9.78 seconds
+67 examples, 0 failures
