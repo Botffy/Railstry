@@ -1,8 +1,8 @@
 Firstapp::Application.routes.draw do
 	#http://guides.rubyonrails.org/routing.html	
 
-	resources :microposts
-	resources :users
+	#resources :microposts
+	#resources :users
 
 	match '/contact', :to => 'pages#contact'
 	match '/about', :to => 'pages#about'
