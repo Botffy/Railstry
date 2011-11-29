@@ -1,12 +1,17 @@
 Firstapp::Application.routes.draw do
 
-#  get "users/new"
+  get "sessions/new"
+
 
 	#http://guides.rubyonrails.org/routing.html	
 
 	resources :users
+	resources :sessions, :only=>[:new, :create, :destroy]
 
 	match '/signup', :to => 'users#new'
+
+	match '/signin', :to=> 'sessions#new'
+	match '/signout', :to=> 'sessions#destroy'
 
 	match '/contact', :to => 'pages#contact'
 	match '/about', :to => 'pages#about'

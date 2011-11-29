@@ -42,6 +42,10 @@ UsersController
   GET 'new'
     should be successful
     should have the right title
+    should have a name field
+    should have an email field
+    should have a password field
+    should have a password confirmation field
   POST 'create'
     failure
       should not create a user
@@ -58,6 +62,16 @@ UsersController
     should include the user's name in a h1
     should have a profile image around the name
 
+SessionsController
+  GET 'new'
+    should be successful
+    should have the right title
+  POST 'create'
+    invalid signin
+      should redirect back to the login page
+      should have the correct title
+      should have a flash message
+
 Users
   signup
     failure
@@ -73,5 +87,5 @@ LayoutLinks
   should have the Signup page at '/signup'
   should have the right links leading to the right pages
 
-Finished in 6.17 seconds
-48 examples, 0 failures
+Finished in 7.66 seconds
+57 examples, 0 failures
