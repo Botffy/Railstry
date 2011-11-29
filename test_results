@@ -24,6 +24,7 @@ LayoutLinks
   should have the About page at '/about'
   should have the Help page at '/help'
   should have the Signup page at '/signup'
+  should have the right links leading to the right pages
 
-Finished in 2.88 seconds
-15 examples, 0 failures
+Finished in 2.12 seconds
+16 examples, 0 failures
