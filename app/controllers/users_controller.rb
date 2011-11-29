@@ -8,6 +8,7 @@ class UsersController < ApplicationController
 	def create
 		@user=User.new(params[:user])
 		if @user.save
+			flash[:success]=render_to_string(:partial=>"shared/signup_success").html_safe;
 			redirect_to @user
 		else
 			@title="Signup"

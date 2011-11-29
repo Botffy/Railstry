@@ -138,10 +138,24 @@ a.fakebutton:hover, nav ul li a:hover {
 }
 
 /* Round corners */
-.round {
+.round, .flash {
   -moz-border-radius:    10px;
   -webkit-border-radius: 10px;
   border-radius:         10px;
+}
+
+/* flash */
+div.flash {
+	color: #fff;
+	background-color: #eb117c;
+	padding: 10px;
+	margin-bottom: 2em;
+	margin-top: 1em;
+}
+
+#content div.flash a {
+	color: #fff;
+	text-decoration: underline;
 }
 
 

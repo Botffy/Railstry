@@ -19,7 +19,14 @@
 
 <%= render 'layouts/navlinks' %>
 
+
+
 <section id='content' class='round'>
+
+	<% flash.each do |key,val| %>
+		<div class='flash <%= key %>'><%= val %></div>
+	<% end %>
+
 	<%= content_for?(:content) ? yield(:content) : yield %>
 </section>
 
