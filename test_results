@@ -93,6 +93,11 @@ LayoutLinks
   should have the Help page at '/help'
   should have the Signup page at '/signup'
   should have the right links leading to the right pages
+  when not signed in
+    should have a 'sign in' link that leads to the signin page
+  when signed in
+    should have a signout link
+    should have a profile link
 
-Finished in 6.39 seconds
-62 examples, 0 failures
+Finished in 7.86 seconds
+65 examples, 0 failures

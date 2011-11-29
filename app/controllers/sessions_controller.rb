@@ -18,6 +18,7 @@ class SessionsController < ApplicationController
 
 	def destroy
 		sign_out
+		flash[:success]=render_to_string(:partial=>"shared/signout_success").html_safe;
 		redirect_to root_path
 	end
 end
