@@ -1,11 +1,10 @@
 Firstapp::Application.routes.draw do
 
-  get "users/new"
+#  get "users/new"
 
 	#http://guides.rubyonrails.org/routing.html	
 
-	#resources :microposts
-	#resources :users
+	resources :users
 
 	match '/signup', :to => 'users#new'
 
