@@ -47,12 +47,23 @@ UsersController
       should not create a user
       should have the right title
       should render the new page
+    success
+      should create a user
+      should redirect to the user's profile on success
+      should have a welcome message flash
   GET 'show'
     should be successful
     should find the correct user
     should have the right title
     should include the user's name in a h1
     should have a profile image around the name
+
+Users
+  signup
+    failure
+      should not make a new user
+    success
+      should make a new user
 
 LayoutLinks
   should have the Home page at root
@@ -62,5 +73,5 @@ LayoutLinks
   should have the Signup page at '/signup'
   should have the right links leading to the right pages
 
-Finished in 5.27 seconds
-43 examples, 0 failures
+Finished in 6.17 seconds
+48 examples, 0 failures
