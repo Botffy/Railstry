@@ -79,6 +79,11 @@ describe "LayoutLinks" do
 			visit root_path
 			response.should have_selector("a", :href=>user_path(@user), :content=>"Profile")
 		end
+
+		it "should not have signup link on front page" do
+			visit root_path
+			response.should_not have_selector("a", :href=>signup_path, :content=>"Sign up now!")
+		end
 	end
 	
 

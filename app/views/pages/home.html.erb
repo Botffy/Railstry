@@ -9,7 +9,11 @@
 
 </p>
 
+
+<% unless signed_in? %>
 <p id='signup_container'>
 
 <%= link_to "Sign up now!", signup_path, :class=>"fakebutton round signup_button" %>
+
 </p>
+<% end %>
