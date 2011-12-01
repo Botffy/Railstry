@@ -26,4 +26,15 @@ class UsersController < ApplicationController
 		@user=User.find(params[:id])
 		@title="Edit user"
 	end
+
+	def update
+		@user=User.find(params[:id])
+		if @user.update_attributes(params[:user])
+			flash[:success]=render_to_string(:partial=>"shared/edit_profile_success").html_safe;
+			redirect_to @user
+		else
+			@title="Edit user"
+			render 'edit'
+		end
+	end
 end

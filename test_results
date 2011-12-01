@@ -46,6 +46,18 @@ UsersController
     should have an email field
     should have a password field
     should have a password confirmation field
+  GET 'edit'
+    should be successful
+    should have the right title
+    should have a link to change Gravatar
+  PUT 'update'
+    failure
+      should render the edit page again
+      should have the right title
+    success
+      should change the user's attributes
+      should redirect to the users profile
+      should have a flash notification
   POST 'create'
     failure
       should not create a user
@@ -103,6 +115,7 @@ LayoutLinks
   when signed in
     should have a signout link
     should have a profile link
+    should not have signup link on front page
 
-Finished in 9.78 seconds
-67 examples, 0 failures
+Finished in 9.14 seconds
+76 examples, 0 failures

@@ -54,6 +54,54 @@ describe UsersController do
 			response.should have_selector("a", :href=>"http://gravatar.com/emails", :content=>"change")
 		end
 	end
+
+
+
+	describe "PUT 'update'" do
+		before(:each) do
+			@user=Factory(:user)
+			test_sign_in(@user)
+		end
+
+		describe "failure" do
+			before(:each) do
+				@attr={ :email=>"", :name=>"", :password=>"", :password_confirmation=>"" }
+			end
+
+			it "should render the edit page again" do
+				put :update, :id=>@user, :user=>@attr
+				response.should render_template('edit')
+			end
+
+			it "should have the right title" do
+				put :update, :id=>@user, :user=>@attr
+				response.should have_selector("title", :content=>"Edit")
+			end
+		end
+		
+		describe "success" do
+			before(:each) do
+				@attr={ :name=>"Muk Muk", :email=>"mukmuk@muk.muk", :password =>"mukmuk", :password_confirmation => "mukmuk" }
+			end
+
+			it "should change the user's attributes" do
+				put :update, :id=>@user, :user=>@attr
+				@user.reload
+				@user.name.should == @attr[:name]
+				@user.email.should == @attr[:email]
+			end
+
+			it "should redirect to the users profile" do
+				put :update, :id=>@user, :user=>@attr
+				response.should redirect_to(user_path(@user))
+			end
+
+			it "should have a flash notification" do
+				put :update, :id=>@user, :user=>@attr
+				flash[:success].should=~/updated/
+			end
+		end
+	end
 	
 
 	describe "POST 'create'" do
