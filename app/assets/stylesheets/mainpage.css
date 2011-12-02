@@ -111,7 +111,7 @@ a.fakebutton, nav ul li a {
 
 
 
-a.fakebutton:hover, nav ul li a:hover {
+a.fakebutton:hover, nav ul li a:hover, nav ul li a.active {
 	color: #ffffff;
 	background-color: #eb117c;
 }
@@ -193,3 +193,5 @@ div.field_with_errors input {
 	margin: -12px;
 	margin-bottom: 1em;
 }
+
+ 

@@ -1,17 +1,17 @@
 <nav class='upper_navlist'>
 	<ul class='unlist'>
 		<% if signed_in? %>
-		<li><%= link_to "Users", users_path, :class=>"round" %>
-		<li><%= link_to "Profile", current_user, :class=>"round" %>
-		<li><%= link_to "Settings", edit_user_path(current_user), :class=>"round" %>
+		<li><%= link_to_and_highlight "Users", users_path, :class=>"round" %>
+		<li><%= link_to_and_highlight "Profile", current_user, :class=>"round" %>
+		<li><%= link_to_and_highlight "Settings", edit_user_path(current_user), :class=>"round" %>
 		<% end %>
 
-		<li><%= link_to "Help", help_url, :class=>"round" %></li>
+		<li><%= link_to_and_highlight "Help", help_url, :class=>"round" %></li>
 
 		<% if signed_in? %>
-		<li><%= link_to "Sign out", signout_url, :class=>"round" %></li>
+		<li><%= link_to_and_highlight  "Sign out", signout_url, :class=>"round" %></li>
 		<% else %>
-		<li><%= link_to "Sign in", signin_url, :class=>"round" %></li>
+		<li><%= link_to_and_highlight "Sign in", signin_url, :class=>"round" %></li>
 		<% end %>
 	</ul>
 </nav>

@@ -10,4 +10,11 @@ def title
 	end
 end
 
+
+def link_to_and_highlight (name, options = {}, html_options = {}, &block)
+	if current_page?(options) then html_options[:class] << " active" end
+	
+	link_to name, options, html_options, block 
+end
+
 end
