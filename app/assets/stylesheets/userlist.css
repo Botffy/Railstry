@@ -1,6 +1,55 @@
 
+/**
+	from http://mislav.uniqpath.com/will_paginate
+*/
+div.pagination {
+	background-color: white;
+	cursor: default;
+	text-align: center;
+	margin-top: 0.2em;
+	margin-bottom: 0.2em;
+}
+/*
+div.pagination .previous_page {
+	float: left;
+}
+div.pagination .next_page {
+	float: right;
+}
+*/
+
+
+div.pagination a, div.pagination span, div.pagination em {
+	display: inline-block;
+	padding: 0.2em 0.5em;
+}
+
+div.pagination .disabled {
+	color: #bbb;
+	border: 1px solid #bbb;
+}
+div.pagination em {
+	font-style: normal;
+	font-weight: bold;
+	background: #eb117c;
+	color: white;
+	border: 1px solid #eb117c;
+}
+div.pagination a {
+	text-decoration: none;
+	color: #00c7e7;
+	border: 1px solid #00c7e7;
+}
+#content div.pagination a:hover, #content div.pagination a:focus {
+	text-decoration: none;
+	color: #eb117c;
+	border-color: #eb117c;
+}
+
+
+
+
 ul.users {
-	margin-top: 2em;
 }
 
 ul.users li {
