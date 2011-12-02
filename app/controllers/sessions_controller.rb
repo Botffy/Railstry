@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
 		else
 			sign_in user
 			flash[:success]=render_to_string(:partial=>"shared/signin_success").html_safe;
-			redirect_to user;
+			redirect_back_or user;
 		end
 	end
 

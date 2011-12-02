@@ -110,6 +110,9 @@ Users
     successive successes
       should sign a user in and out
 
+FriendlyForwardings
+  should forward to the required page after signin
+
 LayoutLinks
   should have the Home page at root
   should have the Contact page at '/contact'
@@ -124,5 +127,5 @@ LayoutLinks
     should have a profile link
     should not have signup link on front page
 
-Finished in 9.41 seconds
-80 examples, 0 failures
+Finished in 12.25 seconds
+81 examples, 0 failures

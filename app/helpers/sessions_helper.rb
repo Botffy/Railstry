@@ -24,13 +24,18 @@ module SessionsHelper
 	end
 
 	def deny_access
+		store_location
 		redirect_to signin_path, :notice=>render_to_string(:partial=>"shared/deny_access").html_safe;
+	end
+
+	def redirect_back_or(default)
+		redirect_to(session[:return_to] || default)
+		clear_return_to
 	end
 
 	def current_user?(user)
 		user==current_user
 	end
-
 
 
 	private
@@ -40,5 +45,12 @@ module SessionsHelper
 	end
 	def remember_token
 		cookies.signed[:remember_token] || [nil,nil]
+	end
+
+	def store_location
+		session[:return_to]=request.fullpath
+	end
+	def clear_return_to
+		session[:return_to]=nil
 	end
 end
