@@ -215,4 +215,41 @@ describe UsersController do
 			end
 		end
 	end
+
+
+	describe "GET 'index'" do
+		describe "for visitors" do
+			it "should deny access" do
+				get :index
+				response.should redirect_to(signin_path)
+				flash[:notice].should=~/signed in/i
+			end
+		end
+		describe "for signed-in users" do
+			before(:each) do
+				@user=test_sign_in(Factory(:user))
+
+				@users=[@user, Factory(:user, :name=>"Mormota", :email=>"mormota@mormo.ta"), Factory(:user, :name=>"Cica", :email=>"cica@ci.ca")]
+			end
+
+			it "should be successful" do
+				get :index
+				response.should be_success
+			end
+			it "should have the right title" do
+				get :index
+				response.should have_selector("title", :content=>"Users")
+			end
+
+			it "should have entries for the existing users" do
+				get :index
+				@users.each do |user|
+					response.should have_selector("li", :content=>user.name)
+				end
+			end
+			
+		end
+
+		
+	end
 end

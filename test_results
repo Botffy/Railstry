@@ -81,6 +81,13 @@ UsersController
     for other users
       should require that a user can access only his own edit page
       should require that a user can only update his own data
+  GET 'index'
+    for visitors
+      should deny access
+    for signed-in users
+      should be successful
+      should have the right title
+      should have entries for the existing users
 
 SessionsController
   GET 'new'
@@ -127,5 +134,5 @@ LayoutLinks
     should have a profile link
     should not have signup link on front page
 
-Finished in 12.25 seconds
-81 examples, 0 failures
+Finished in 10.55 seconds
+85 examples, 0 failures

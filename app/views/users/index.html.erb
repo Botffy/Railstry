@@ -1,0 +1,14 @@
+<%content_for :css do%>
+  <%= stylesheet_link_tag 'userlist' %>
+<%end%>
+
+<h1>Users</h1>
+
+
+<ul class='users'>
+	<% @users.each do |user| %>
+	<li>
+		<%= link_to ( gravatar_for(user, :size=>30) )+user.name, user %>
+	</li>
+	<% end %>
+</ul>

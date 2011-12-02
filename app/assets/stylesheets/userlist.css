@@ -1,0 +1,21 @@
+
+ul.users {
+	margin-top: 2em;
+}
+
+ul.users li {
+	list-style-type: none;
+}
+
+ul.users li a {
+	display: inline-block;
+	padding-top: 0.1em;
+	margin-top: 0.2em;
+	padding-bottom: 0.1em;
+	margin-bottom: 0.2em;
+}
+
+ul.users li img {
+	vertical-align: middle;
+	margin-right: 10px;
+}
