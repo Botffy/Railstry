@@ -3,6 +3,8 @@ source 'http://rubygems.org'
 gem 'rails', '3.1.0'
 gem 'sqlite3', '1.3.4'
 gem 'gravatar_image_tag', '1.0.0.pre2'
+gem 'faker', '0.3.1'
+gem 'will_paginate', '3.0.pre2'
 
 group :production do
   # gems for Heroku
@@ -12,7 +14,6 @@ end
 group :development do
   gem 'rspec-rails', '2.6.1'
   gem 'annotate', :git => 'git://github.com/ctran/annotate_models.git'
-  gem 'faker', '0.3.1'
 end
 
 

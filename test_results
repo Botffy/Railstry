@@ -88,6 +88,7 @@ UsersController
       should be successful
       should have the right title
       should have entries for the existing users
+      should paginate the user page
 
 SessionsController
   GET 'new'
@@ -134,5 +135,5 @@ LayoutLinks
     should have a profile link
     should not have signup link on front page
 
-Finished in 10.55 seconds
-85 examples, 0 failures
+Finished in 27.66 seconds
+86 examples, 0 failures

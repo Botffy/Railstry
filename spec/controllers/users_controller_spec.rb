@@ -230,6 +230,10 @@ describe UsersController do
 				@user=test_sign_in(Factory(:user))
 
 				@users=[@user, Factory(:user, :name=>"Mormota", :email=>"mormota@mormo.ta"), Factory(:user, :name=>"Cica", :email=>"cica@ci.ca")]
+
+				30.times do
+					@users << Factory(:user, :name=>Factory.next(:name), :email=>Factory.next(:email))
+				end
 			end
 
 			it "should be successful" do
@@ -243,13 +247,18 @@ describe UsersController do
 
 			it "should have entries for the existing users" do
 				get :index
-				@users.each do |user|
+				@users[0..2].each do |user|
 					response.should have_selector("li", :content=>user.name)
 				end
 			end
-			
-		end
 
-		
+			it "should paginate the user page" do
+				get :index
+				response.should have_selector("div.pagination")
+				response.should have_selector("span.disabled", :content=>"Previous")
+				response.should have_selector("a", :content=>"2")
+				response.should have_selector("a", :content=>"Next") #:href=>"/users?escape=false&amp;page=2", 
+			end
+		end
 	end
 end
