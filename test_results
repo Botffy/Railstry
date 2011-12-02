@@ -23,6 +23,10 @@ User
       should return nil when there's an email/password mismatch
       should return nil for unknown email addresses
       should return the user object if there's a match
+  being an admin
+    should be an attribute indeed
+    should not be an admin by default
+    should be made admin
 
 PagesController
   GET 'home'
@@ -81,6 +85,15 @@ UsersController
     for other users
       should require that a user can access only his own edit page
       should require that a user can only update his own data
+  DELETE 'destroy'
+    as a visitor
+      should deny the request
+    as a user who's not an admin
+      should protect the page
+    as an admin
+      should destroy the user
+      should redirect to the userindex
+      should not destroy himself
   GET 'index'
     for visitors
       should deny access
@@ -135,5 +148,5 @@ LayoutLinks
     should have a profile link
     should not have signup link on front page
 
-Finished in 27.66 seconds
-86 examples, 0 failures
+Finished in 12.57 seconds
+94 examples, 0 failures
