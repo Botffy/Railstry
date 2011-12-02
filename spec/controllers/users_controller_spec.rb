@@ -198,7 +198,21 @@ describe UsersController do
 				response.should redirect_to(signin_path)
 			end
 		end
-		
-	end
 
+		describe "for other users" do
+			before(:each) do
+				wrong_user=Factory(:user, :email=>"other@user.us")
+				test_sign_in(wrong_user)
+			end
+
+			it "should require that a user can access only his own edit page" do
+				get :edit, :id=>@user
+				response.should redirect_to(root_path)
+			end
+			it "should require that a user can only update his own data" do
+				put :update, :id=>@user, :user=>{}
+				response.should redirect_to(root_path)
+			end
+		end
+	end
 end

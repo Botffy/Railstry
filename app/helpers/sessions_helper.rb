@@ -27,6 +27,12 @@ module SessionsHelper
 		redirect_to signin_path, :notice=>render_to_string(:partial=>"shared/deny_access").html_safe;
 	end
 
+	def current_user?(user)
+		user==current_user
+	end
+
+
+
 	private
 
 	def user_from_remember_token

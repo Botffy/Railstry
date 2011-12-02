@@ -74,6 +74,13 @@ UsersController
     should have the right title
     should include the user's name in a h1
     should have a profile image around the name
+  authentication of edit/update
+    for visitors
+      should deny access to the edit page
+      should deny access to the update action
+    for other users
+      should require that a user can access only his own edit page
+      should require that a user can only update his own data
 
 SessionsController
   GET 'new'
@@ -117,5 +124,5 @@ LayoutLinks
     should have a profile link
     should not have signup link on front page
 
-Finished in 9.14 seconds
-76 examples, 0 failures
+Finished in 9.41 seconds
+80 examples, 0 failures
