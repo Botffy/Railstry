@@ -4,6 +4,7 @@
 		<li><%= link_to "Help", help_url, :class=>"round" %></li>
 
 		<% if signed_in? %>
+		<li><%= link_to "Profile", current_user, :class=>"round" %>
 		<li><%= link_to "Settings", edit_user_path(current_user), :class=>"round" %>
 		<li><%= link_to "Sign out", signout_url, :class=>"round" %></li>
 		<% else %>
