@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
-	before_filter :authenticate, :only=>[:edit, :update, :index]
+	before_filter :unregistered_users_only, :only=>[:new, :create]
+	before_filter :authenticate, :only=>[:edit, :update, :index, :destroy]
 	before_filter :correct_user, :only=>[:edit, :update]
+	before_filter :admin_user, :only=>:destroy
 
 
 	def index
@@ -46,8 +48,24 @@ class UsersController < ApplicationController
 		end
 	end
 
+	def destroy
+		if User.find(params[:id]) == current_user
+			flash[:failure]="You can't delete yourself, dummy."
+			redirect_to users_path
+		else
+			User.find(params[:id]).destroy
+			flash[:success]="The user has been struck down."
+			redirect_to users_path
+		end
+	end
 
-	private
+
+		private
+
+
+	def unregistered_users_only
+		redirect_to(root_path) if signed_in?
+	end
 
 	def authenticate
 		deny_access unless signed_in?
@@ -56,5 +74,9 @@ class UsersController < ApplicationController
 	def correct_user
 		@user=User.find(params[:id])
 		redirect_to(root_path) unless current_user?(@user)
+	end
+
+	def admin_user
+		redirect_to(root_path) unless current_user.admin?
 	end
 end

@@ -1,14 +1,3 @@
-# == Schema Information
-#
-# Table name: users
-#
-#  id         :integer         not null, primary key
-#  name       :string(255)
-#  email      :string(255)
-#  created_at :datetime
-#  updated_at :datetime
-#
-
 require 'spec_helper'
 
 describe User do
@@ -123,6 +112,24 @@ describe User do
 		end
 		
 	end
+
+
+	describe "being an admin" do
+		before(:each) do
+			@user=User.create!(@attr)
+		end
+
+		it "should be an attribute indeed" do
+			@user.should respond_to(:admin)
+		end
+		it "should not be an admin by default" do
+			@user.should_not be_admin
+		end
+		it "should be made admin" do
+			@user.toggle!(:admin)
+			@user.should be_admin
+		end
+	end 
 
 end
 
