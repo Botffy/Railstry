@@ -24,7 +24,9 @@ namespace :db do
 
 		50.times do
 			User.all(:limit=>6).each do |user|
-				user.microposts.create!(:content=>Faker::Lorem.sentence(5))
+				post=user.microposts.create!(:content=>Faker::Lorem.sentence(15) )
+				post.created_at=(rand*365).days.ago
+				post.save
 			end
 		end
 	end
