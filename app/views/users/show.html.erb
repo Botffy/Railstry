@@ -2,18 +2,30 @@
   <%= stylesheet_link_tag 'usershow' %>
 <%end%>
 
-<table class='userprofile'>
-	<tr>
-		<td class='main'>
-			<h1>
-				<%= gravatar_for @user %>
-				<%= @user.name %>
-			</h1>
-		</td>
-		<td class='sidebar round'>
-			<strong>Name:</strong> <%= @user.name %>
-				<br/>
-			<strong>URL:</strong> <%= link_to user_path($user), user_path(@user) %>
-		</td>
-	</tr>
-</table>
+<div class='userprofile'>
+
+
+<div class='main'>
+	<div class='sidebar round'>
+		<strong>Name:</strong> <%= @user.name %>
+			<br/>
+		<strong>URL:</strong> <%= link_to user_path($user), user_path(@user) %>
+			<br/>
+		<strong>Posts:</strong> <%= @user.microposts.count %>
+	</div>
+
+
+	<h1>
+		<%= gravatar_for @user %>
+		<%= @user.name %>
+	</h1>
+</div>
+
+	<% unless @user.microposts.empty? %>
+		<div class='posts'>
+			<%=render @microposts %>
+		</div>
+		<%= will_paginate @microposts %>
+	<% end %>
+
+</div>

@@ -1,23 +1,21 @@
 /* User show page */
 
-table.userprofile {
+div.userprofile {
 	width: 100%;
 	margin-bottom: 0;
 }
 
-td.main {
-	width: 70%;
+div.main {
 	padding: 1em;
 }
 
-td.sidebar {
-	width: 30%;
+div.sidebar {
+	float: right;
 	padding: 1em;
-	vertical-align: top;
 	background: #00c7e7;
 }
 
-#content td.sidebar a, #content td.sidebar a:visited {
+#content div.sidebar a, #content div.sidebar a:visited {
 	color: black;
 	text-decoration: underline;
 }
@@ -26,7 +24,32 @@ td.sidebar {
 	border: 1px solid #999;
 	vertical-align: middle;
 }
-.userprofile .main {
+.userprofile .main h1 {
 	font-size: 130%;
 }
 
+
+div.posts {
+	margin-top: 0.6em;
+}
+
+div.micropost {
+	border-bottom: 1px solid #00c7e7;
+	border-top: 1px solid #00c7e7;
+	padding: 0.4em;
+	margin-bottom: 1.8em;
+	clear: both;
+}
+
+div.micropost span {
+	display: block;
+}
+
+div.micropost span.timestamp {
+	font-size: 80%;
+	font-style: italic;
+	text-align: right;
+	margin-top: 0.2em;
+	margin-bottom: 0.2em;
+	margin-right: 0.6em;
+}

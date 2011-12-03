@@ -180,6 +180,16 @@ describe UsersController do
 			get :show, :id => @user
 			response.should have_selector("h1>img", :class=>"gravatar")
 		end
+
+		describe "microposts" do
+			it "should also display the user's microposts" do
+				post1=Factory(:micropost, :user=>@user, :content=>"Lorem ipsum.")
+				post2=Factory(:micropost, :user=>@user, :content=>"Dolor sit amet.")
+				get :show, :id=>@user
+				response.should have_selector("span.content", :content=>post1.content)
+				response.should have_selector("span.content", :content=>post2.content)
+			end
+		end
 	end
 
 
