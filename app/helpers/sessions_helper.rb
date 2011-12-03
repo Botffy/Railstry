@@ -23,6 +23,10 @@ module SessionsHelper
 		!current_user.nil?
 	end
 
+	def authenticate
+		deny_access unless signed_in?
+	end
+
 	def deny_access
 		store_location
 		redirect_to signin_path, :notice=>render_to_string(:partial=>"shared/deny_access").html_safe;

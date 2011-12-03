@@ -69,9 +69,6 @@ class UsersController < ApplicationController
 		redirect_to(root_path) if signed_in?
 	end
 
-	def authenticate
-		deny_access unless signed_in?
-	end
 
 	def correct_user
 		@user=User.find(params[:id])

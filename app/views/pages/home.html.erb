@@ -1,19 +1,6 @@
-<h1>Ohai</h1>
 
-<p>
-	This is the Railstry, a mock project we're doing at the university.
-</p>
-
-<p>
-
-
-</p>
-
-
-<% unless signed_in? %>
-<p id='signup_container'>
-
-<%= link_to "Sign up now!", signup_path, :class=>"fakebutton round signup_button" %>
-
-</p>
+<% if signed_in? %>
+	<%= render 'pages/frontpage' %>
+<% else %>
+	<%= render 'pages/frontpage_guest' %>
 <% end %>

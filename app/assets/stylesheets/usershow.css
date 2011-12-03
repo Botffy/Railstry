@@ -9,16 +9,6 @@ div.main {
 	padding: 1em;
 }
 
-div.sidebar {
-	float: right;
-	padding: 1em;
-	background: #00c7e7;
-}
-
-#content div.sidebar a, #content div.sidebar a:visited {
-	color: black;
-	text-decoration: underline;
-}
 
 .userprofile img.gravatar {
 	border: 1px solid #999;

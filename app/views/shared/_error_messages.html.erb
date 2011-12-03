@@ -3,7 +3,7 @@
 	<h2>Error!</h2>
 	<p>Your attempt to <%=msg%> ended in a miserable failure due to the following <%= pluralize(object.errors.count, "error") %>:</p>
 	<ul>
-	<% @user.errors.full_messages.each do |msg| %>
+	<% object.errors.full_messages.each do |msg| %>
 		<li><%= msg %>
 	<% end %>
 	</ul>

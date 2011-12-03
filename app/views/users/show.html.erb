@@ -14,18 +14,17 @@
 		<strong>Posts:</strong> <%= @user.microposts.count %>
 	</div>
 
-
 	<h1>
 		<%= gravatar_for @user %>
 		<%= @user.name %>
 	</h1>
 </div>
 
-	<% unless @user.microposts.empty? %>
-		<div class='posts'>
-			<%=render @microposts %>
-		</div>
-		<%= will_paginate @microposts %>
-	<% end %>
+<% unless @user.microposts.empty? %>
+	<div class='posts'>
+		<%=render @microposts %>
+	</div>
+	<%= will_paginate @microposts %>
+<% end %>
 
 </div>
