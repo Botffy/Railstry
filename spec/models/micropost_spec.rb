@@ -23,4 +23,16 @@ describe Micropost do
 			@post.user.should == @user
 		end
 	end
+
+	describe "validations" do
+		it "should require an associated user" do
+			Micropost.new(@attr).should_not be_valid
+		end
+		it "should require some content" do
+			@user.microposts.build(:content=>"").should_not be_valid
+		end
+		it "should reject overlong content" do
+			@user.microposts.build(:content=>'a'*301).should_not be_valid
+		end
+	end
 end

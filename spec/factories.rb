@@ -13,3 +13,8 @@ end
 Factory.sequence :email do |n|
 	"tester-#{n}@example.com"
 end
+
+Factory.define :micropost do |post|
+	post.content "lorem ipsum dolor sit amet"
+	post.association :user
+end
